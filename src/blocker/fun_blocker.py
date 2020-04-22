@@ -1,11 +1,11 @@
 import pandas as pd
 import numpy as np
 
-def block(left_tuples, right_tuples):
+def fun_blocker(left_tuples, right_tuples):
     df_left = pd.read_json(left_tuples)
     df_right = pd.read_json(right_tuples)
 
-    block_factor = 1
+    block_factor = 0.1
 
     df_left.rename(columns='l_{}'.format, inplace=True)
     df_right.rename(columns='r_{}'.format, inplace=True)

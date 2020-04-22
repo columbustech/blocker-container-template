@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 
-from .block import *
+from .fun_blocker import *
 import requests
 
 class BlockView(APIView):
@@ -15,5 +15,5 @@ class BlockView(APIView):
     def post(self, request):
         left = request.data['leftTuples']
         right = request.data['rightTuples']
-        df = block(left, right)
+        df = fun_blocker(left, right)
         return Response({"output": df.to_json(orient='records')}, status=status.HTTP_200_OK)

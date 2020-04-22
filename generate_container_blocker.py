@@ -21,7 +21,7 @@ def main():
     if options.blocker is None:
         print("Please provide a process function with the -f flag")
 
-    shutil.copy(options.blocker, os.path.join(base_path, "block.py"))
+    shutil.copy(options.blocker, os.path.join(base_path, "fun_blocker.py"))
 
     if options.modules is not None:
         shutil.copytree(options.modules, os.path.join(base_path, os.path.dirname(os.path.join(options.modules, ""))))
